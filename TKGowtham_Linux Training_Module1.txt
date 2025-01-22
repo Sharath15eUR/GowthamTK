@@ -1,0 +1,134 @@
+################################################
+# EmbedUR - Linux Training - Module 1 Assessment
+#
+# Name     : T K Gowtham
+# College  : VIT Chennai
+# Email ID : gowthamkamalasekar@gmail.com
+################################################
+
+------------------------------------------------------------------------------------------------
+
+1. Create a file and add executable permission to all users (user, group and others)
+
+Commands and Output :
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ touch file1.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ls -l | grep "file1.txt"
+-rw-rw-r-- 1 tkgowtham tkgowtham     0 Jan 22 20:32 file1.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ chmod 775 file1.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ls -l | grep "file1.txt"
+-rwxrwxr-x 1 tkgowtham tkgowtham     0 Jan 22 20:32 file1.txt
+
+------------------------------------------------------------------------------------------------
+
+2. create a file and remove write permission for group user alone.
+
+Commands and Output :
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ touch file2.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ls -l | grep "file2.txt"
+-rw-rw-r-- 1 tkgowtham tkgowtham     0 Jan 22 20:35 file2.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ chmod 644 file2.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ls -l | grep "file2.txt"
+-rw-r--r-- 1 tkgowtham tkgowtham     0 Jan 22 20:35 file2.txt
+
+------------------------------------------------------------------------------------------------
+
+3. Create a file and add a softlink to the file in different directory (Eg : Create a file in dir1/dir2/file and create a softlink for file inside dir1)
+
+Commands and Output :
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ mkdir dir1
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ cd dir1
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ mkdir dir2
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ cd dir2
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1/dir2$ touch file3.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1/dir2$ cd ..
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ ln -s dir2/file3.txt softlink_for_file3
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ ls -l
+total 4
+drwxrwxr-x 2 tkgowtham tkgowtham 4096 Jan 22 20:16 dir2
+lrwxrwxrwx 1 tkgowtham tkgowtham   14 Jan 22 20:16 softlink_for_file3 -> dir2/file3.txt
+
+------------------------------------------------------------------------------------------------
+
+4. Use ps command with options to display all active process running on the system
+
+Commands and Output : 
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ps -A
+    PID TTY          TIME CMD
+      1 ?        00:00:03 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 rcu_gp
+      4 ?        00:00:00 rcu_par_gp
+      5 ?        00:00:00 netns
+      7 ?        00:00:00 kworker/0:0H-events_highpri
+      9 ?        00:00:02 kworker/0:1H-events_highpri
+     10 ?        00:00:00 mm_percpu_wq
+     11 ?        00:00:00 rcu_tasks_rude_
+     12 ?        00:00:00 rcu_tasks_trace
+     13 ?        00:00:00 ksoftirqd/0
+     14 ?        00:00:03 rcu_sched
+     15 ?        00:00:00 migration/0
+     16 ?        00:00:00 idle_inject/0
+     18 ?        00:00:00 cpuhp/0
+     19 ?        00:00:00 cpuhp/1
+     20 ?        00:00:00 idle_inject/1
+     21 ?        00:00:00 migration/1
+     22 ?        00:00:02 ksoftirqd/1
+     24 ?        00:00:00 kworker/1:0H-events_highpri
+     25 ?        00:00:00 kdevtmpfs
+     26 ?        00:00:00 inet_frag_wq
+     27 ?        00:00:00 kauditd
+     28 ?        00:00:00 khungtaskd
+     29 ?        00:00:00 oom_reaper
+     30 ?        00:00:00 writeback
+     31 ?        00:00:07 kcompactd0
+     32 ?        00:00:00 ksmd
+     33 ?        00:00:00 khugepaged
+     80 ?        00:00:00 kintegrityd
+     81 ?        00:00:00 kblockd
+     82 ?        00:00:00 blkcg_punt_bio
+
+------------------------------------------------------------------------------------------------
+
+5. Create 3 files in a dir1 and re-direct the output of list command with sorted by timestamp of the files to a file
+
+Commands and Output : 
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ mkdir dir_1
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ cd dir_1
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir_1$ touch file1.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir_1$ touch file2.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir_1$ touch file3.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir_1$ ls -ltr > file4.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir_1$ cat file4.txt
+total 0
+-rw-rw-r-- 1 tkgowtham tkgowtham 0 Jan 22 20:25 file1.txt
+-rw-rw-r-- 1 tkgowtham tkgowtham 0 Jan 22 20:25 file2.txt
+-rw-rw-r-- 1 tkgowtham tkgowtham 0 Jan 22 20:25 file3.txt
+-rw-rw-r-- 1 tkgowtham tkgowtham 0 Jan 22 20:25 file4.txt
+
+------------------------------------------------------------------------------------------------
+
+
