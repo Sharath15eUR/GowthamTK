@@ -1,0 +1,34 @@
+################################################
+# EmbedUR - Linux Training - Module 1 Assessment
+#
+# Name     : T K Gowtham
+# College  : VIT Chennai
+# Email ID : gowthamkamalasekar@gmail.com
+################################################
+
+------------------------------------------------------------------------------------------------
+
+3. Create a file and add a softlink to the file in different directory (Eg : Create a file in dir1/dir2/file and create a softlink for file inside dir1)
+
+Commands and Output :
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ mkdir dir1
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ cd dir1
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ mkdir dir2
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ cd dir2
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1/dir2$ touch file3.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1/dir2$ cd ..
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ ln -s dir2/file3.txt softlink_for_file3
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1/dir1$ ls -l
+total 4
+drwxrwxr-x 2 tkgowtham tkgowtham 4096 Jan 22 20:16 dir2
+lrwxrwxrwx 1 tkgowtham tkgowtham   14 Jan 22 20:16 softlink_for_file3 -> dir2/file3.txt
+
+------------------------------------------------------------------------------------------------
