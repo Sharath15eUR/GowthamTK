@@ -1,0 +1,25 @@
+################################################
+# EmbedUR - Linux Training - Module 1 Assessment
+#
+# Name     : T K Gowtham
+# College  : VIT Chennai
+# Email ID : gowthamkamalasekar@gmail.com
+################################################
+
+------------------------------------------------------------------------------------------------
+
+2. create a file and remove write permission for group user alone.
+
+Commands and Output :
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ touch file2.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ls -l | grep "file2.txt"
+-rw-rw-r-- 1 tkgowtham tkgowtham     0 Jan 22 20:35 file2.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ chmod 644 file2.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ls -l | grep "file2.txt"
+-rw-r--r-- 1 tkgowtham tkgowtham     0 Jan 22 20:35 file2.txt
+
+------------------------------------------------------------------------------------------------
