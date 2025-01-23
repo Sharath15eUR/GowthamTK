@@ -1,0 +1,50 @@
+################################################
+# EmbedUR - Linux Training - Module 1 Assessment
+#
+# Name     : T K Gowtham
+# College  : VIT Chennai
+# Email ID : gowthamkamalasekar@gmail.com
+################################################
+
+------------------------------------------------------------------------------------------------
+
+4. Use ps command with options to display all active process running on the system
+
+Commands and Output : 
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module1$ ps -A
+    PID TTY          TIME CMD
+      1 ?        00:00:03 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 rcu_gp
+      4 ?        00:00:00 rcu_par_gp
+      5 ?        00:00:00 netns
+      7 ?        00:00:00 kworker/0:0H-events_highpri
+      9 ?        00:00:02 kworker/0:1H-events_highpri
+     10 ?        00:00:00 mm_percpu_wq
+     11 ?        00:00:00 rcu_tasks_rude_
+     12 ?        00:00:00 rcu_tasks_trace
+     13 ?        00:00:00 ksoftirqd/0
+     14 ?        00:00:03 rcu_sched
+     15 ?        00:00:00 migration/0
+     16 ?        00:00:00 idle_inject/0
+     18 ?        00:00:00 cpuhp/0
+     19 ?        00:00:00 cpuhp/1
+     20 ?        00:00:00 idle_inject/1
+     21 ?        00:00:00 migration/1
+     22 ?        00:00:02 ksoftirqd/1
+     24 ?        00:00:00 kworker/1:0H-events_highpri
+     25 ?        00:00:00 kdevtmpfs
+     26 ?        00:00:00 inet_frag_wq
+     27 ?        00:00:00 kauditd
+     28 ?        00:00:00 khungtaskd
+     29 ?        00:00:00 oom_reaper
+     30 ?        00:00:00 writeback
+     31 ?        00:00:07 kcompactd0
+     32 ?        00:00:00 ksmd
+     33 ?        00:00:00 khugepaged
+     80 ?        00:00:00 kintegrityd
+     81 ?        00:00:00 kblockd
+     82 ?        00:00:00 blkcg_punt_bio
+
+------------------------------------------------------------------------------------------------
