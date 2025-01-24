@@ -1,0 +1,21 @@
+################################################
+# EmbedUR - Linux Training - Module 1 - Q4
+#
+# Name     : T K Gowtham
+# College  : VIT Chennai
+# Email ID : gowthamkamalasekar@gmail.com
+################################################
+
+------------------------------------------------------------------------------------------------
+4. Write a code to identify the process with the highest memory usage and then terminate it.
+
+Commands and Output :
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module2/q4$ ps aux --sort=-%mem | head -n 2
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+tkgowth+    2250  1.0 13.3 11472712 270568 ?     Sl   20:26   2:01 /usr/lib/firefox/firefox
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module2/q4$ kill -9 2250
+
+------------------------------------------------------------------------------------------------
+

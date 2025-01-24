@@ -1,0 +1,33 @@
+################################################
+# EmbedUR - Linux Training - Module 2 - Q2
+#
+# Name     : T K Gowtham
+# College  : VIT Chennai
+# Email ID : gowthamkamalasekar@gmail.com
+################################################
+
+------------------------------------------------------------------------------------------------
+2. Replace all occurrences of "localhost" with "127.0.0.1" in a configuration file named config.txt, and save the updated file as updated_config.txt.
+
+Commands and Output :
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module2/q2$ cat config.txt
+server_name = localhost
+server_port = 8080
+db_name = localhost
+db_id = 1234
+api_url = https://api.com/localhost/
+api_passwd = 12345
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module2/q2$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+
+tkgowtham@tkgowtham-VirtualBox:~/Desktop/embedur/linuxTraining/module2/q2$ cat updated_config.txt 
+server_name = 127.0.0.1
+server_port = 8080
+db_name = 127.0.0.1
+db_id = 1234
+api_url = https://api.com/127.0.0.1/
+api_passwd = 12345
+
+------------------------------------------------------------------------------------------------
+
