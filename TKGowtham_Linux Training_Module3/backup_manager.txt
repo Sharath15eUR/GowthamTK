@@ -1,0 +1,109 @@
+#!/bin/bash
+
+############################################
+# EmbedUR Linux Training Module 3 Assessment
+# 
+# Automating file backup and reporting to
+# the system
+# 
+# Name    : T K Gowtham
+# College : VIT Chennai
+# Email ID: gowthamkamalasekar@gmail.com
+############################################
+
+# Accepting 3 Arguments : source dir, dest dir
+# file extension
+
+if [ ! $# -ge 3 ]; then
+	echo "Required Parameters Missing !!! Please enter src dir, dest dir, file type"
+	exit 1
+fi
+
+src=$1
+dest=$2
+file_ext=$(echo "$3" | sed 's/^\.//')
+
+if [ ! -d "$dest" ];
+then
+        echo "Backup dir does not exist and creating..."
+        mkdir "$dest"
+        if [ $? -ne 0 ];
+        then
+                exit 1
+        fi
+fi
+
+echo "Source Directory      : $src"
+echo "Destination Directory : $dest"
+echo "File Extension        : $file_ext" 
+echo ""
+
+# Globbing : Finding all files with provided 
+# extension
+
+echo "Globbing : "
+ls "$src"/*.$file_ext
+echo ""
+
+# Using export to set environment variable
+# to store no of files backed up
+
+echo "Setting Up Backup Count Environmental Variable : "
+export BACKUP_COUNT=0
+
+# Store files in array and print their names
+# and sizes
+
+files=("$src"/*.$file_ext)
+echo "Printing File Name With Size"
+for file in ${files[@]}
+do
+	ls -lh $file | awk '{print $9, $5}'
+done
+echo ""
+
+
+# Create backup files
+
+total_size=0
+
+if  [ ${#files[@]} -lt 1 ];
+then
+	echo "Either source dir is empty or doesn't contain file with given extension" >&2
+	exit 1
+fi
+
+echo "Backing Up Files....."
+for file in ${files[@]}
+do
+	filename=$(basename "$file") 
+	if [ ! -f "$dest/$filename" ]; then
+		cp "$file" "$dest/$filename"
+		BACKUP_COUNT=$((BACKUP_COUNT+1))
+		size=$(ls -l "$file" | awk '{print $5}')
+		total_size=$((total_size+size))
+		echo "$file is backed up!"
+	else
+        	timestamp_src_file=$(stat -c %Y "$file")
+        	timestamp_dest_file=$(stat -c %Y "$dest/$filename")
+		if [ "$timestamp_src_file" -gt "$timestamp_dest_file" ]; then
+			cp "$file" "$dest/$filename"
+			BACKUP_COUNT=$((BACKUP_COUNT+1))
+			size=$(ls -l "$file" | awk '{print $5}')
+			total_size=$((total_size+size))
+			echo "$file updated version is backed up!" 
+		else
+			echo "$file already exist and timestamp of src is lesser, hence skipped!"
+		fi
+	fi 
+done
+
+
+# Creating Log file
+#
+echo ""
+total_size=$((total_size/(1024*1024))) #Converting Bytes to MB
+echo "Total no of files : $BACKUP_COUNT" >> backup_report.log
+echo "Total size : $total_size MB" >> backup_report.log
+echo "Backup Path : $dest" >> backup_report.log
+echo "Summary Generated!!!"
