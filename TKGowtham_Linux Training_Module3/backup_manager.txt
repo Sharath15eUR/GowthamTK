@@ -55,6 +55,14 @@ export BACKUP_COUNT=0
 # and sizes
 
 files=("$src"/*.$file_ext)
+
+if [ ! -e "${files[0]}" ]
+then
+        echo "Either source dir is empty or doesn't contain file with given extension" >&2
+        exit 1
+fi
+
+
 echo "Printing File Name With Size"
 for file in ${files[@]}
 do
@@ -66,12 +74,6 @@ echo ""
 # Create backup files
 
 total_size=0
-
-if  [ ${#files[@]} -lt 1 ];
-then
-	echo "Either source dir is empty or doesn't contain file with given extension" >&2
-	exit 1
-fi
 
 echo "Backing Up Files....."
 for file in ${files[@]}
