@@ -1,8 +1,0 @@
-SSH is secure shell service which is encrypted and secure and connects to 
-a remote machine's shell
-
-ex: ssh username@ip-addr
-
-Telnet is an unencrypted protocol and is insecure and not used often now.
-
-ex : telnet remote-ip
