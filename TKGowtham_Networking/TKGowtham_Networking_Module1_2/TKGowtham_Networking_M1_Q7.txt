@@ -1,0 +1,6 @@
+To check if the default gateway is accessible or not
+use :
+	ip route | grep "default"
+	ping <ip_addr>
+
+default gateway is the route that forwards traffic from local network to other network. Typically a wifi router.

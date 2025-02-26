@@ -1,0 +1,3 @@
+Remote Desktop Protocol : For windows and windows desktop access
+VNC : For Linux/mac, virtual full gui interface
+Team Viewer and Anydesk : Both cross platform gui interface

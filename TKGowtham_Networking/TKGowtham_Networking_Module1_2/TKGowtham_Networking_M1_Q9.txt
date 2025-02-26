@@ -1,0 +1,4 @@
+1. Open a web browser
+2. Enter the router ip, ex : 192.168.1.1
+3. Log into your router
+4. View the list of devices in DHCP Client List/Connected Devices

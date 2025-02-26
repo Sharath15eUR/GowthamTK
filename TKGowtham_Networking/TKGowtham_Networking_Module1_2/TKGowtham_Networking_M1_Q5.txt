@@ -1,0 +1,8 @@
+When two devices are assigned the same IP address in a network, it causes an IP
+conflict.
+
+This will cause network disruptions as packets will be dropped or misrouted.
+
+The ARP table will get confused
+
+To detect it use arp command
