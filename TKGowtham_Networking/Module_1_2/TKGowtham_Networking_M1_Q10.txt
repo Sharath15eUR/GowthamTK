@@ -1,0 +1,5 @@
+A DHCP server assigns IP address using the DORA process.
+1. Client broadcasts a dhcp discover request for an IP.
+2. Server responds with an available IP address.
+3. Client sends DHCP request to accept the offered IP
+4. Server confirms with DHCP ACK and assign the IP to the requested device

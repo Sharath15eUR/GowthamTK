@@ -1,0 +1,7 @@
+ifconfig is used for managing network interface in wired (ethernet) and loopback
+iwconfig is used for managing network interface in wireless configuration.
+
+MTU defines the largest packet size that a network interface can send.
+To check interface speed use ethtool eth0
+netmask for setting subnet mask
+broadcat for setting broadcast address.

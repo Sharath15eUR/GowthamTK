@@ -1,0 +1,25 @@
+Ping : Used to test network connectivity between two devices
+options :
+	-c No of packet count
+	-i interval time between packet
+	-s set packet size
+	-t set ttl for packet
+
+Arp : It is address resolution protocol used for manipulating the ARP table, mapping
+      IP address to MAC address. It is used for troubleshooting network issues.
+Options :
+	-a show all arp entries
+	-n display numeric ip address
+	-d delete a entry
+
+ifconfig : Used for checking the network interface
+
+interface : eth0 - Name of the network interface
+Status flags : UP, BROADCAST, RUNNING, MULTICAST
+MTU :Maximum transfer unit of the largest packet size
+inet : IPv4 address
+inet6 : IPv6 address
+subnet mask : network portion of the ip address
+MAC address : address of NIC card.
+Transmit queue length : the number of packets waiting to be sent
+Packet Statistics : RX and TX packets, bytes, errors, dropped and overruns
