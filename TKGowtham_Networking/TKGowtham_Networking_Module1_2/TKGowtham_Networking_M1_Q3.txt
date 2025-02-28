@@ -1,9 +1,0 @@
-Wireshark : Open Source GUI based tool for packet sniffing
-            use query like port 80 or tcp to filter the packets
-
-TCPDump : CLI based packet sniffer and analzer, it is lightweight and efficient
-	  Use command line syntax, ex : tcpdump tcp port 80
-
-Cisco Packet Tracer : Visual GUI tool where we can create network topologies and
-		      see how the packets are travelling.
-		      
